@@ -1,0 +1,27 @@
+ALGORITHM Sentence
+VAR
+   sentence: STRING
+    length, wordCount, vowelCount: INTEGER
+    vowels, currentsentence: CHARACTER
+BEGIN
+ wordCount:=1;
+  vowelCount:=0;
+  vowels:=['a','e','i','o','u','y','A','E','I','O','U','Y'] ;
+READ sentence;
+FOR i FROM 0 TO sentence.length-1 DO
+currentsentence:= sentence [i]
+length:= length+1;
+//********************counting words **************
+IF (currentsentence:=' ') THEN
+    wordCount:=wordCount+1 
+END_IF
+// ********************counting vowels******************
+IF (currentsentence in vowels) THEN
+   vowelCount:= vowelCount+1
+END_IF
+
+END_FOR
+writeln ("the number of characters is ", length)
+writeln("the number of words is " , wordCount)
+writeln("the number of vowels is " , vowelCount)
+END
